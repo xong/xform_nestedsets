@@ -1,0 +1,25 @@
+.nestedsets-preparation.loading .rex-hl2 {
+background-image:url(loading.gif);
+background-position:85px center;
+background-repeat:no-repeat;
+}
+
+.nestedsets-preparation.loading a {
+opacity:0.6;
+pointer-events:none;
+}
+
+.nestedset {
+background:url(sub.png) no-repeat left center;
+}
+
+.nestedset.lvl-1 { background-image:none; }
+.nestedset.lvl-2 { padding-left:2em; background-position:1em; }
+.nestedset.lvl-3 { padding-left:4em; background-position:3em; }
+.nestedset.lvl-4 { padding-left:6em; background-position:5em; }
+.nestedset.lvl-5 { padding-left:8em; background-position:7em; }
+.nestedset.lvl-6 { padding-left:10em; background-position:9em; }
+.nestedset.lvl-7 { padding-left:12em; background-position:11em; }
+.nestedset.lvl-8 { padding-left:14em; background-position:13em; }
+.nestedset.lvl-9 { padding-left:16em; background-position:15em; }
+.nestedset.lvl-10 { padding-left:18em; background-position:17em; }

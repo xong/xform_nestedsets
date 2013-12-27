@@ -1,0 +1,7 @@
+xform_nestedsets = Nested Sets
+xform_nestedsets_activate = activate
+xform_nestedsets_deactivate = remove (sorting will be unrecoverably deleteted)
+xform_nestedsets_deactivate_confirm = Delete all nested sets properties?
+xform_nestedsets_notavailable = only available for empty tables
+xform_nestedsets_delete = Do you really want to delete this record and all of its children?
+xform_nestedsets_add = add child

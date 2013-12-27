@@ -1,0 +1,7 @@
+xform_nestedsets = Nested Sets
+xform_nestedsets_activate = aktivieren
+xform_nestedsets_deactivate = entfernen (Sortierung geht unwiederbringlich verloren)
+xform_nestedsets_deactivate_confirm = Sollen die Nested-Set-Eigenschaften wirklich entfernt werden?
+xform_nestedsets_notavailable = nur für leere Tabellen verfügbar
+xform_nestedsets_delete = Sollen dieser Datensatz und alle untergeordneten Datensätze wirklich gelöscht werden?
+xform_nestedsets_add = Kind hinzufügen
