@@ -2,7 +2,7 @@
 {
   $(document).ready(function()
   {
-    $('#rex-output').on('click', 'a', function(e)
+    $('#rex-output').on('click', '.nestedsets-preparation a', function(e)
     {
       e.preventDefault();
       
