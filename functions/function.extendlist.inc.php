@@ -130,6 +130,9 @@ function xform_nestedsets_extendlist($_params)
   $_REQUEST['sort'] = 'nestedset_lft';
   $_REQUEST['sorttype'] = 'asc';
   
+  // display all data on one page
+  $list->rowsPerPage = PHP_INT_MAX;
+  
   $list->sql->setQuery($list->prepareQuery($list->query));
   
   // add padding
