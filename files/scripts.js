@@ -8,11 +8,15 @@
       
       if($(this).hasClass('deactivate') && !confirm($(this).attr('data-confirm')))
         return false;
-
-      $('.nestedsets-preparation').addClass('loading')
-      $('#rex-output').load($(this).attr('href') + ' #rex-output > *', function()
+      
+      var url = $(this).attr('href');
+      $('.nestedsets-preparation').addClass('loading');
+      $.get(url, function()
       {
-        $('.nestedsets-preparation').removeClass('loading');
+        $('#rex-output').load(url + ' #rex-output > *', function()
+        {
+          $('.nestedsets-preparation').removeClass('loading');
+        });
       });
       
       return false;

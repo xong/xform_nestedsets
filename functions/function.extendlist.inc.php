@@ -11,9 +11,9 @@ function xform_nestedsets_prepare_list_sql($_params)
   if(!xform_nestedsets_table_is_nestedset($_params['table']['table_name']))
     return $_params['subject'];
   
-  if(stripos($_params['subject'], ' from `'.$_params['table']['table_name'].' where'))
+  if(stripos($_params['subject'], ' from `'.$_params['table']['table_name'].'` where'))
   {
-    return str_ireplace(' from `'.$_params['table']['table_name'].' where', ' from `'.$_params['table']['table_name'].' where (id != 1 AND nestedset_parent IS NULL) AND', $_params['subject']);
+    return str_ireplace(' from `'.$_params['table']['table_name'].'` where', ' FROM `'.$_params['table']['table_name'].'` WHERE (id != 1 AND nestedset_parent IS NOT NULL) AND ', $_params['subject']);
   }
   else
   {

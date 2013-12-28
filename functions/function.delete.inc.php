@@ -38,6 +38,13 @@ function xform_nestedsets_dataset_delete($_params)
   
   foreach($sql->getArray() as $id)
   {
+    // recreate root element
+    if($id['id'] == 1)
+    {
+      rex_register_extension('XFORM_DATA_DATASET_DELETED', 'xform_nestedsets_dataset_deleted');
+      continue;
+    }
+    
     $sql->flush();
     $sql->setQuery("SELECT nestedset_lft, nestedset_rgt FROM `".$sql->escape($_params['table']['table_name'])."` WHERE id = ".$id['id']);
     $data = $sql->getRow();
@@ -52,6 +59,23 @@ function xform_nestedsets_dataset_delete($_params)
   }
   
   return true;
+}
+
+function xform_nestedsets_dataset_deleted($_params)
+{
+  $sql = rex_sql::factory();
+  $sql->setQuery('SELECT MAX(nestedset_rgt) as nestedset_rgt FROM `'.$_params['table']['table_name'].'`');
+  $maxrgt = $sql->getValue('nestedset_rgt');
+  
+  $sql->flush();
+  $sql->setTable($_params['table']['table_name']);
+  $sql->setValues(array(
+    'id' => 1,
+    'nestedset_lft' => 0,
+    'nestedset_rgt' => $maxrgt + 1,
+    'nestedset_lvl' => 0
+  ));
+  $sql->replace();
 }
 
 function xform_nestedsets_truncate($_params)

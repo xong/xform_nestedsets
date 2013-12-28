@@ -83,7 +83,7 @@ function xform_nestedsets_activate($_tablename)
   $sql->flush();
   $sql->setTable($_tablename);
   $sql->setValues(array(
-    'id' => 0,
+    'id' => 1,
     'nestedset_lft' => 0,
     'nestedset_rgt' => 1,
     'nestedset_lvl' => 0
